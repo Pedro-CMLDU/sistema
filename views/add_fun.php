@@ -46,21 +46,6 @@
         
 
                 <div class="input-group">
-                    <label>Tipo de Funcionário:</label>
-                    <div class="radio-group">
-                        <div class="radio-group-div">
-                            <label> Comum</label>
-                            <input type="radio" name="tipo" value="comum">
-                        </div>
-                       <div class="radio-group-div">
-                            <label>Gerente</label>
-                            <input type="radio" name="tipo" value="gerente"> 
-                       </div>
-                        
-                    </div>
-                </div>
-
-                <div class="input-group">
                     <label for="contato">Contato:</label>
                     <input type="tel" id="contato" placeholder="(87) 96734-8403">
                 </div>
