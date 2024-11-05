@@ -10,7 +10,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
     $senha = password_hash($senha, PASSWORD_ARGON2ID);
-    $nova_variavel = 2; 
 
     $insertProf = "INSERT INTO func VALUES(null, :nome, :cargo, :contato, :cod_tip_func, :email, :senha)";
     $req = $dbh->prepare($insertProf);
