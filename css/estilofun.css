@@ -145,6 +145,10 @@ body {
     background-color: #1f2d59;
 }
 
+p {
+    color: white;
+}
+
 @media screen and (max-width: 414px){
     .header .logo {
         width: 100%;

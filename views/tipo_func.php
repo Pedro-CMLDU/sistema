@@ -22,13 +22,24 @@
     
     <nav class="breadcrumb">
         <a href="index_menu.php">Início</a> >
-        <a href="fucionario.php">Voltar</a>
+        <a href="funcionario.php">Voltar</a>
     </nav>
     
     <main class="main-content">
         <div class="form-container">
             <h2>Tipo de Funcionário</h2>
-            <form action="processa_tipo_funcionario.php" method="POST">
+            <?php
+            // Exibe mensagem de sucesso ou erro com base nos parâmetros na URL
+            if (isset($_GET['sucesso'])) {
+                if ($_GET['sucesso'] == '1') {
+                    echo "<p>Cadastro realizado com sucesso!</p>";
+                } else {
+                    echo "<p>Erro ao cadastrar o tipo de funcionário.</p>";
+                }
+            }
+            ?>
+
+            <form action="../src/controller/adicionar_tipo_func.php" method="POST">
                 <div class="input-group">
                     <label for="tipo_funcionario">Informe a Profissão:</label>
                     <input type="text" id="tipo_funcionario" name="tipo_funcionario" placeholder="Ex: Professor, Gerente" required>
