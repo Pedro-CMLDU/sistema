@@ -21,8 +21,8 @@
     </header>
     
     <nav class="breadcrumb">
-        <a href="index_menu.php">Início</a> >
-        <a href="funcionario.php">Voltar</a>
+        <a href="index_menu.php">Início</a>
+        <a href="add_fun.php">Voltar</a>
     </nav>
     
     <main class="main-content">
