@@ -45,7 +45,6 @@
                 <table class="tabela-chaves">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Descrição</th>
                             <th>Número</th>
                         </tr>
@@ -53,7 +52,6 @@
                     <tbody>
                         <?php foreach ($chaves as $chave): ?>
                             <tr>
-                                <td><?php echo htmlspecialchars($chave['id']); ?></td>
                                 <td><?php echo htmlspecialchars($chave['descrição']); ?></td>
                                 <td><?php echo htmlspecialchars($chave['numero']); ?></td>
                             </tr>
