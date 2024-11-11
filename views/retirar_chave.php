@@ -26,7 +26,7 @@
         <!-- Formulário de adição de nova chave -->
         <div class="form-container">
             <h2>Retirar   Chave</h2>
-            <form class="formulario">
+            <form class="formulario" action="../src/controller/reservar_chave.php" method="POST">
                 <div class="form-inputs">
                     <div class="quem-retirou">
                         <label for="descricao" class="custom-label">Quem retirou:</label>
