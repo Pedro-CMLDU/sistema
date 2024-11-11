@@ -23,7 +23,7 @@
 
     <nav class="navegacao">
         <div class="nav-esq">
-            <a href="index_menu.php"> Inicio > </a>
+            <a href="index_menu.php"> Inicio</a>
         </div>
         <div class="nav-dir"><a href="add_fun.php">Novo Fucionário</a></div>
 
@@ -51,7 +51,7 @@
                         <tr>
                             <th>Nome</th>
                             <th>Contato</th>
-                            <th>Tipo funcionario</th>
+                            <th>Cargo</th>
                             <th>Email</th>
                         </tr>
                     </thead>

@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $telefone = filter_input(INPUT_POST, 'telefone');
     $cargo = filter_input(INPUT_POST, 'cargo');
 
-    $insertProf = "INSERT INTO func (nome, contato, cod_tip_func) VALUES (:nome, :contato, :cod_tip_func)";
+    $insertPro = "INSERT INTO func (nome, contato, cod_tip_func) VALUES (:nome, :contato, :cod_tip_func)";
     $req = $dbh->prepare($insertProf);
     $req->bindValue(':nome', $nome);
     $req->bindValue(':contato', $telefone);

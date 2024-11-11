@@ -27,12 +27,10 @@
         <!-- Formulário de adição de nova chave -->
         <div class="form-container">
             <h2>Adicionar Nova Chave</h2>
-            <form>
-                <label for="descricao" class="custom-label">Descrição:</label>
-                <input type="text" id="descricao" name="descricao" placeholder="Descrição:">
+            <form action="../src/controller/add_adicionar_chaves.php" method="POST">
                 <label for="sala" class="custom-label">Sala:</label>
                 <input type="text" id="sala" name="sala" placeholder="Sala:">
-                <label for="localizacao" class="custom-label">Localização:</label>
+                <label for="localizacao" class="custom-label">Localização(Número da sala):</label>
                 <input type="text" id="localizacao" name="localizacao" placeholder="Localização:">
                 <button type="submit" class="butao">Adicionar Chave</button>
             </form>
