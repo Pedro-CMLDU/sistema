@@ -52,7 +52,7 @@
                     <tbody>
                         <?php foreach ($chaves as $chave): ?>
                             <tr>
-                                <td><?php echo htmlspecialchars($chave['descrição']); ?></td>
+                                <td><?php echo htmlspecialchars($chave['descricao']); ?></td>
                                 <td><?php echo htmlspecialchars($chave['numero']); ?></td>
                             </tr>
                         <?php endforeach; ?>

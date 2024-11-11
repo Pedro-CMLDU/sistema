@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $sala = filter_input(INPUT_POST, 'sala');
     $localizacao = filter_input(INPUT_POST, 'localizacao');
 
-    $insertchave = "INSERT INTO chave(descricao, numero) VALUES(:descricao, :numero)";
+    $insertchave = "INSERT INTO chave (descricao, numero) VALUES(:descricao, :numero)";
     $req = $dbh->prepare($insertchave);
     $req->bindValue(':descricao', $sala);
     $req->bindValue(':numero', $localizacao);
