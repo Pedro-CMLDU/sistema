@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keybox - Retirar Chave</title>
-    <link rel="stylesheet" href="../css/estilo-chave.css"> <!-- Referência ao arquivo CSS externo -->
+    <link rel="stylesheet" href="../css/estilo-chave.css">
 </head>
 
 <body>
@@ -26,13 +26,27 @@
             <h2>Retirar Chave</h2>
             <form class="formulario" action="../src/controller/reservar_chave.php" method="POST">
                 <div class="form-inputs">
-                    <!-- Campo para o nome de quem retirou a chave -->
                     <div class="quem-retirou">
-                        <label for="nome" class="custom-label">Quem retirou:</label>
-                        <input type="text" id="nome" name="nome" placeholder="Pesquise por: Nome, Cargo, Contato">
+                        <label for="funcionario" class="custom-label">Quem retirou:</label>
+                        <select id="funcionario" name="funcionario">
+                            <option value="#" disabled selected>Selecione o Funcionário</option>
+                            <?php
+                            require_once('../config/dbConnect.php');
+                            $sqlFuncionarios = "SELECT id, nome FROM func";
+                            $resultadoFuncionarios = $dbh->query($sqlFuncionarios);
+                            $listaFuncionarios = $resultadoFuncionarios->fetchAll(PDO::FETCH_ASSOC);
+
+                            if (count($listaFuncionarios) > 0):
+                                foreach ($listaFuncionarios as $funcionario):
+                            ?>
+                                    <option value="<?= $funcionario['id'] ?>"> <?= $funcionario['nome'] ?> </option>
+                            <?php
+                                endforeach;
+                            endif;
+                            ?>
+                        </select>
                     </div>
 
-                    <!-- Campos para a data e hora -->
                     <div class="data-hora">
                         <div class="data">
                             <label for="data" class="custom-label">Data:</label>
@@ -44,14 +58,27 @@
                         </div>
                     </div>
 
-                    <!-- Campo para a descrição da chave (ex: sala) -->
                     <div class="chave">
-                        <label for="sala" class="custom-label">Chave:</label>
-                        <input type="text" id="sala" name="sala" placeholder="sala 07">
+                        <label for="chave" class="custom-label">Chave:</label>
+                        <select id="chave" name="chave">
+                            <option value="#" disabled selected>Selecione a Chave</option>
+                            <?php
+                            $sqlChaves = "SELECT id_chave, descricao FROM chaves";
+                            $resultadoChaves = $dbh->query($sqlChaves);
+                            $listaChaves = $resultadoChaves->fetchAll(PDO::FETCH_ASSOC);
+
+                            if (count($listaChaves) > 0):
+                                foreach ($listaChaves as $chave):
+                            ?>
+                                    <option value="<?= $chave['id'] ?>"> <?= $chave['descricao'] ?> </option>
+                            <?php
+                                endforeach;
+                            endif;
+                            ?>
+                        </select>
                     </div>
                 </div>
 
-                <!-- Botões de ação -->
                 <div class="form-botoes">
                     <button type="submit" class="butao">Salvar</button>
                     <button type="button" class="butao">
