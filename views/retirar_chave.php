@@ -47,23 +47,12 @@
                         </select>
                     </div>
 
-                    <div class="data-hora">
-                        <div class="data">
-                            <label for="data" class="custom-label">Data:</label>
-                            <input class="data-horainput" type="text" id="data" name="data" placeholder="06/08/2024">
-                        </div>
-                        <div class="hora">
-                            <label for="hora" class="custom-label">Hora:</label>
-                            <input class="data-horainput" type="text" id="hora" name="hora" placeholder="08:17">
-                        </div>
-                    </div>
-
                     <div class="chave">
                         <label for="chave" class="custom-label">Chave:</label>
                         <select id="chave" name="chave">
                             <option value="#" disabled selected>Selecione a Chave</option>
                             <?php
-                            $sqlChaves = "SELECT id_chave, descricao FROM chaves";
+                            $sqlChaves = "SELECT id, descricao FROM chave";
                             $resultadoChaves = $dbh->query($sqlChaves);
                             $listaChaves = $resultadoChaves->fetchAll(PDO::FETCH_ASSOC);
 
