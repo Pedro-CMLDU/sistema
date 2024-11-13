@@ -1,65 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keybox - Devolver Chave</title>
-    <link rel="stylesheet" href="../css/devolver_chave.css"> <!-- Referência ao arquivo CSS externo -->
+    <link rel="stylesheet" href="../css/devolver_chave.css">
 </head>
+
 <body>
     <div class="retangulo-superior">
         <div class="keybox">
-         <img src="../imagem/logo.png" alt="keybox">
+            <img src="../imagem/logo.png" alt="keybox">
         </div>
         <div class="imglogosenac">
-         <img src="../imagem/logosenac.png" alt="logosenac" class="img_senac_logo">
-     </div>
-     </div>
+            <img src="../imagem/logosenac.png" alt="logosenac" class="img_senac_logo">
+        </div>
     </div>
 
     <nav class="breadcrumb">
-        <a href="index_menu.php">Início > Devolver</a>
+        <a href="index_menu.php">Início</a> > <a href="#">Devolver</a>
     </nav>
 
     <div class="container">
-        <!-- Breadcrumb de navegação -->
-        <!-- Formulário de adição de nova chave -->
         <div class="form-container">
-            <h2>Devolver  Chave</h2>
-            <form class="formulario">
-                <div class="form-inputs">
-                    <div class="quem-retirou">
-                        <label for="descricao" class="custom-label">Quem devolveu:</label>
-                        <input type="text" id="descricao" name="Pesquise por : Nome, Cargo, Contato" placeholder="Pesquise por : Nome, Cargo, Contato">
-                    </div>
-                    <div class="data-hora">
-                        <div class="data">
-                            <label for="sala" class="custom-label">Data:</label>
-                        <input class="data-horainput" type="text" id="06/08/2024" name="06/08/2024" placeholder="06/08/2024">
-                        </div>
-                        <div class="hora">
-                            <label for="localizacao" class="custom-label">Hora:</label>
-                        <input class="data-horainput" type="text" id="08:17" name="08:17" placeholder="08:17">
-                        </div>
-                        
-                        
-                    </div>
-                    <div class="chave">
-                        <label for="Chave" class="custom-label">Chave:</label>
-                        <input type="text" id="sala 07" name="sala 07" placeholder="sala 07">
-                    </div>                    
-                </div>
-                <div class="form-botoes">
-    
-                    <a href="index_menu.php" class="butao">Salvar</a>
-                    
-                    <a href="index_menu.php" class="butao">Cancelar</a>
-                </div>
+            <h2>Devolver Chave</h2>
+            <!-- Tabela com as informações do banco de dados -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Registro</th>
+                        <th>Funcionário</th>
+                        <th>Chave</th>
+                        <th>Data de Empréstimo</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    require_once('../config/dbConnect.php');
 
-               
-            </form>
+                    // Consulta para selecionar os registros sem data de devolução
+                    $sql = "
+                        SELECT registro.id AS registro_id, func.nome AS funcionario, chave.descricao AS chave, registro.data_emp
+                        FROM registro
+                        JOIN func ON registro.id_func = func.id
+                        JOIN chave ON registro.id_chave = chave.id
+                        WHERE registro.data_dev IS NULL
+                    ";
+                    $resultado = $dbh->query($sql);
+                    $registros = $resultado->fetchAll(PDO::FETCH_ASSOC);
+
+                    if (count($registros) > 0):
+                        foreach ($registros as $registro):
+                    ?>
+                            <tr>
+                                <td><?= $registro['registro_id'] ?></td>
+                                <td><?= $registro['funcionario'] ?></td>
+                                <td><?= $registro['chave'] ?></td>
+                                <td><?= $registro['data_emp'] ?></td>
+                                <td>
+                                    <form action="../src/controller/devolvendo_chave.php" method="POST">
+                                        <input type="hidden" name="registro_id" value="<?= $registro['registro_id'] ?>">
+                                        <button type="submit" class="butao">Devolver</button>
+                                    </form>
+                                </td>
+                            </tr>
+                    <?php
+                        endforeach;
+                    else:
+                    ?>
+                        <tr>
+                            <td colspan="5">Nenhuma chave para devolução</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>
-</html>
 
+</html>

@@ -157,7 +157,7 @@ button:hover {
 }
 .data-hora{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
 }
 .data, .hora{
