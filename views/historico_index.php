@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -25,16 +25,15 @@
         <?php
         require_once('../config/dbConnect.php');
 
-        // Consulta combinada sem exibir IDs e com o nome correto das colunas
+        // Consulta SQL com correções
         $sql = "SELECT 
                     chave.descricao AS chave_descricao,
                     CASE 
                         WHEN chave.numero = 1 THEN 'Disponível'
                         WHEN chave.numero = 2 THEN 'Emprestada'
-                        ELSE 'Indefinido'
-                    END AS chave_numero,
+                    END AS chave_status,
                     registro.data_emp AS data_emp,
-                    registro.data_dev AS data_dev,
+                    COALESCE(DATE_FORMAT(registro.data_dev, '%Y-%m-%d %H:%i:%s'), 'Pendente') AS data_dev,
                     func.nome AS func_nome,
                     tipo_func.tip_func AS func_cargo
                 FROM 
@@ -44,7 +43,9 @@
                 JOIN 
                     func ON registro.id_func = func.id
                 JOIN 
-                    tipo_funcionario tipo_func ON func.cod_tip_func = tipo_func.codigo";
+                    tipo_funcionario tipo_func ON func.cod_tip_func = tipo_func.codigo
+                WHERE 
+                    chave.numero IN (1, 2)"; // Exclui status indefinido
 
         $resultado = $dbh->query($sql);
         $dados = $resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -69,7 +70,7 @@
                     ?>
                         <tr>
                             <td><?= $linha['chave_descricao'] ?></td>
-                            <td><?= $linha['chave_numero'] ?></td>
+                            <td><?= $linha['chave_status'] ?></td>
                             <td><?= $linha['data_emp'] ?></td>
                             <td><?= $linha['data_dev'] ?></td>
                             <td><?= $linha['func_nome'] ?></td>
