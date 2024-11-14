@@ -25,12 +25,13 @@
         <?php
         require_once('../config/dbConnect.php');
 
-        // Consulta SQL com correções
+        // Consulta SQL ajustada
         $sql = "SELECT 
                     chave.descricao AS chave_descricao,
+                    -- Ajuste para determinar o status da chave
                     CASE 
-                        WHEN chave.numero = 1 THEN 'Disponível'
-                        WHEN chave.numero = 2 THEN 'Emprestada'
+                        WHEN registro.data_dev IS NULL THEN 'Emprestada'
+                        WHEN registro.data_dev IS NOT NULL THEN 'Disponível'
                     END AS chave_status,
                     registro.data_emp AS data_emp,
                     COALESCE(DATE_FORMAT(registro.data_dev, '%Y-%m-%d %H:%i:%s'), 'Pendente') AS data_dev,
@@ -38,11 +39,11 @@
                     tipo_func.tip_func AS func_cargo
                 FROM 
                     chave
-                JOIN 
+                LEFT JOIN 
                     registro ON chave.id = registro.id_chave
-                JOIN 
+                LEFT JOIN 
                     func ON registro.id_func = func.id
-                JOIN 
+                LEFT JOIN 
                     tipo_funcionario tipo_func ON func.cod_tip_func = tipo_func.codigo
                 WHERE 
                     chave.numero IN (1, 2)"; // Exclui status indefinido
