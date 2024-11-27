@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chaves Reservadas</title>
+    <title>Chaves Disponíveis</title>
     <link rel="stylesheet" href="../css/estilo_reservadas.css">
 </head>
 
@@ -19,25 +19,25 @@
     </div>
 
     <div class="container">
-        <div class="titulo">Chaves Reservadas</div>
+        <div class="titulo">Chaves Disponíveis</div>
 
-        <h3>Lista de Chaves Reservadas</h3>
+        <h3>Lista de Chaves Disponíveis</h3>
         <?php
         require_once('../config/dbConnect.php');
 
-        // Consulta para listar apenas as chaves reservadas (numero = 2)
+        // Consulta para listar apenas as chaves disponíveis (numero = 1)
         $sql = "SELECT 
                     descricao AS chave_descricao
                 FROM 
                     chave
                 WHERE 
-                    numero = 2"; // 2 = Reservada
+                    numero = 1"; // 1 = Disponível
 
         $resultado = $dbh->query($sql);
-        $chavesReservadas = $resultado->fetchAll(PDO::FETCH_ASSOC);
+        $chavesDisponiveis = $resultado->fetchAll(PDO::FETCH_ASSOC);
 
-        // Verificar se há chaves reservadas
-        if (count($chavesReservadas) > 0):
+        // Verificar se há chaves disponíveis
+        if (count($chavesDisponiveis) > 0):
         ?>
             <table>
                 <thead>
@@ -47,7 +47,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($chavesReservadas as $chave):
+                    foreach ($chavesDisponiveis as $chave):
                     ?>
                         <tr>
                             <td><?= $chave['chave_descricao'] ?></td>
@@ -59,7 +59,7 @@
             </table>
         <?php else: ?>
             <div class="imagem-vazia">
-                <img src="../imagem/Vector.png" alt="Nenhuma chave reservada">
+                <img src="../imagem/Vector.png" alt="Nenhuma chave disponível">
             </div>
         <?php endif; ?>
     </div>

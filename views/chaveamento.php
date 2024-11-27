@@ -20,7 +20,7 @@
 
     <nav class="navegacao">
         <a href="index_menu.php">Início</a>
-        <a  class="link-add" href="adicionar_chave.php">Acrescentar chaves</a>
+        <a  class="link-add" href="adicionar_chave.php">Nova Chave</a>
     </nav>
 
     <section class="blocomeio">
@@ -43,7 +43,7 @@
             require_once('../src/controller/quant_chaveamento.php');
             if (count($chaves) > 0): ?>
                 <table class="tabela-chaves">
-                    <thead>
+                    <thead class="coluna">
                         <tr>
                             <th>Descrição</th>
                             <th>Número</th>
