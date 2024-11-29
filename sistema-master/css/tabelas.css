@@ -1,0 +1,42 @@
+table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+}
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    color: #fff;
+    font-size: 1.2rem;
+    font-family:'Poppins';
+    font-weight: 500;
+}
+
+table tr, table th{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 5%;
+    width: 100%;
+    padding: 5px;
+}
+table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+}
+
+table td {
+    background-color: #3c4b80;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 8%;
+    width: 25%;
+}
+
+.cargo{
+    justify-content: center;
+}
