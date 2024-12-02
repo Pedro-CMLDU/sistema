@@ -29,10 +29,13 @@ table tr{
     gap: 5%;
     width: 100%;
     padding: 0.3%;
+    
 }
 table th {
     font-weight: 600;
     border-bottom: none;
+    gap: 8%;
+    width: 100%;
 }
 
 table td {
@@ -52,10 +55,12 @@ label, .dt-info, .dt-paging-button{
 
 table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
     border-bottom: none;
-    align-self: center;
 }
 .div.dt-container .dt-length, div.dt-container .dt-search, div.dt-container .dt-info, div.dt-container .dt-processing, div.dt-container .dt-paging {
     color: #3c4b80;
+}
+.dt-column-order{
+    color:#3c4b80;
 }
 
 @media screen and (max-width: 430px) {

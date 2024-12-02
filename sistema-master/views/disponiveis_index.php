@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chaves Reservadas</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.3/css/responsive.bootstrap.css">
     <link rel="stylesheet" href="../css/estilo_reservadas.css">
 </head>
 
@@ -17,21 +19,30 @@
             <img src="../imagem/logosenac.png" alt="logosenac" class="img_senac_logo">
         </div>
     </div>
-
-    <div class="container">
-        <div class="titulo">Chaves Reservadas</div>
-
-        <h3>Lista de Chaves Reservadas</h3>
+    <nav class="breadcrumb">
+        <a href="index_menu.php">Início</a>
+    </nav>
+    <h1 class="titulo-principal">Lista de Chaves Disponíveis</h1>
+    <section class="secao-tabela">
         <?php
         require_once('../config/dbConnect.php');
 
         // Consulta para listar apenas as chaves reservadas (numero = 2)
         $sql = "SELECT 
-                    descricao AS chave_descricao
+                    chave.numero AS chave_numero,
+                    chave.descricao AS chave_descricao,
+                    'Disponível' AS chave_status, -- Todas serão Disponível
+                    MAX(registro.data_emp) AS ultima_data_emp, -- Última data de empréstimo
+                    MAX(DATE_FORMAT(registro.data_dev, '%Y-%m-%d %H:%i:%s')) AS ultima_data_dev -- Última data de devolução
                 FROM 
                     chave
+                LEFT JOIN 
+                    registro ON chave.id = registro.id_chave
                 WHERE 
-                    numero = 2"; // 2 = Reservada
+                    registro.data_dev IS NOT NULL -- Apenas chaves devolvidas
+                    AND chave.numero IN (1, 2) -- Opcional: filtra pelos números desejados
+                GROUP BY 
+                    chave.descricao, chave.numero -- Agrupa por descrição da chave";
 
         $resultado = $dbh->query($sql);
         $chavesReservadas = $resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -39,10 +50,11 @@
         // Verificar se há chaves reservadas
         if (count($chavesReservadas) > 0):
         ?>
-            <table>
+            <table id="tabela" class="display nowrap tabela-principal" style="width:100%">
                 <thead>
                     <tr>
-                        <th>Descrição da Chave</th>
+                        <th>Número</th>
+                        <th>Chave</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,7 +62,8 @@
                     foreach ($chavesReservadas as $chave):
                     ?>
                         <tr>
-                            <td><?= $chave['chave_descricao'] ?></td>
+                            <td class="chaves-disponiveis"><?= $chave['chave_numero'] ?></td>
+                            <td class="chaves-disponiveis"><?= $chave['chave_descricao'] ?></td>
                         </tr>
                     <?php
                     endforeach;
@@ -62,7 +75,22 @@
                 <img src="../imagem/Vector.png" alt="Nenhuma chave reservada">
             </div>
         <?php endif; ?>
-    </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.3/js/dataTables.responsive.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#tabela').DataTable({
+                language: {
+                    url: "https://cdn.datatables.net/plug-ins/1.11.3/i18n/pt_br.json"
+                },
+                scrollCollapse: true,
+                scrollY: '50vh',
+                responsive: true
+            });
+        });
+    </script>
 </body>
 
 </html>
