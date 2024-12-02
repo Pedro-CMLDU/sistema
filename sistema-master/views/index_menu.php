@@ -33,7 +33,7 @@
             </div>
             <div class="div-dois">
                 <div class="section employees">
-                    <a href="fucionario.php" class="botao-sections">Funcionário</a>
+                    <a href="fucionario.php" class="botao-sections">Funcionários</a>
                 </div>
                 <div class="sidebar">
                     <div class="botoes-sidebar">

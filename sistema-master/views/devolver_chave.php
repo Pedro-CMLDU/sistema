@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keybox - Devolver Chave</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
     <link rel="stylesheet" href="../css/devolver_chave.css">
 </head>
 
@@ -21,15 +22,12 @@
     <nav class="breadcrumb">
         <a href="index_menu.php">Início</a> > <a href="#">Devolver</a>
     </nav>
-
-    <div class="container">
-        <div class="form-container">
-            <h2>Devolver Chave</h2>
-            <!-- Tabela com as informações do banco de dados -->
-            <table>
+    <h1 class="titulo-principal">Devolver Chave</h1>
+        <!-- Tabela com as informações do banco de dados -->
+        <section class="secao-tabela">
+            <table id="tabela" class="display tabela-principal">
                 <thead>
                     <tr>
-                        <th>ID Registro</th>
                         <th>Funcionário</th>
                         <th>Chave</th>
                         <th>Data de Empréstimo</th>
@@ -55,7 +53,6 @@
                         foreach ($registros as $registro):
                     ?>
                             <tr>
-                                <td><?= $registro['registro_id'] ?></td>
                                 <td><?= $registro['funcionario'] ?></td>
                                 <td><?= $registro['chave'] ?></td>
                                 <td class="data-emp"><?= $registro['data_emp'] ?></td>
@@ -63,18 +60,28 @@
                                     <a href="../src/controller/devolvendo_chave.php?<?= $registro['registro_id'] ?>" class="devolver"> Devolver </a>
                                 </td>
                             </tr>
-                    <?php
+                        <?php
                         endforeach;
                     else:
-                    ?>
+                        ?>
                         <tr>
                             <td colspan="5">Nenhuma chave para devolução</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>
             </table>
-        </div>
-    </div>
+        </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#tabela').DataTable({
+                    language: {
+                        url: "https://cdn.datatables.net/plug-ins/1.11.3/i18n/pt_br.json"
+                    }
+                });
+            });
+        </script>
 </body>
 
 </html>

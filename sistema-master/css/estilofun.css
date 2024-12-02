@@ -43,16 +43,6 @@ body {
     font-size: 14px;
 }
 
-.breadcrumb a {
-    text-decoration: none;
-    color: #000;
-    margin-right: 5px;
-}
-
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-
 .main-content {
     display: flex;
     justify-content: center;
@@ -144,12 +134,25 @@ body {
 .submit-button:hover {
     background-color: #1f2d59;
 }
-
-.botao-link {
-    margin-left: 80%;
-    color: white;
+.links-nav{
+    text-decoration: none;
+    color:#000;
 }
-
+.link-add {
+    margin-left: 80%;
+    text-decoration: none;
+    background-color: #3c4b80;
+    border-radius: 5px;
+    width: 20%;
+    text-align: center;
+    color: white;
+    padding: 0.8%;
+    font-weight: 600;
+}
+.links-nav{
+    text-decoration: none;
+    color: black;
+}
 
 @media screen and (max-width: 414px){
     .header .logo {

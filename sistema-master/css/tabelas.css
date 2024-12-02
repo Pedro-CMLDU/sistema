@@ -1,42 +1,66 @@
-table {
-    width: 100%;
+.titulo-principal{
+    text-align: center;
+    color: #3c4b80;
+}
+.secao-tabela{
+    width: 96%;
+    font-family: 'Poppins';
+    padding: 2%;
+}
+.tabela-principal{
     display: flex;
     flex-direction: column;
-    font-family: 'Poppins';
+    margin: 0 auto;
 }
+
 table th, table td {
-    padding: 10px;
-    text-align: left;
+    display: flex;
+    justify-content: center;
     color: #fff;
-    font-size: 1.2rem;
     font-family:'Poppins';
     font-weight: 500;
 }
-
-table tr, table th{
+.dt-column-title{
+    color: #3c4b80;
+}
+table tr{
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     gap: 5%;
     width: 100%;
-    padding: 5px;
+    padding: 0.3%;
 }
 table th {
     font-weight: 600;
-    text-transform: uppercase;
-    display: flex;
+    border-bottom: none;
 }
 
 table td {
     background-color: #3c4b80;
     border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     gap: 8%;
-    width: 25%;
+    width: 100%;
 }
 
 .cargo{
     justify-content: center;
+}
+label, .dt-info, .dt-paging-button{
+    font-size: 1.2rem;
+    color: #3c4b80;
+}
+
+table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
+    border-bottom: none;
+    align-self: center;
+}
+.div.dt-container .dt-length, div.dt-container .dt-search, div.dt-container .dt-info, div.dt-container .dt-processing, div.dt-container .dt-paging {
+    color: #3c4b80;
+}
+
+@media screen and (max-width: 430px) {
+    table td{
+        text-align: center;
+        font-size: 14px;
+    }
 }

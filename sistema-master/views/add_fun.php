@@ -21,9 +21,9 @@
     </header>
     
     <nav class="breadcrumb">
-        <a href="index_menu.php">Início</a>
-        <a href="fucionario.php">Voltar</a>
-        <a class="botao-link" href="tipo_func.php">Cadastrar cargo</a>
+        <a href="index_menu.php" class="links-nav">Início > </a>
+        <a href="fucionario.php" class="links-nav">Voltar</a>
+        <a class="link-add" href="tipo_func.php">Cadastrar cargo</a>
 
     </nav>
     
@@ -60,6 +60,10 @@
                 <div class="input-group">
                     <label for="contato">Contato:</label>
                     <input type="tel" id="contato" placeholder="(87) 96734-8403" name="telefone">
+                </div>
+                <div class="input-group">
+                    <label for="Email">Email:</label>
+                    <input type="email" id="email" placeholder="funcionario@pe.senac.br" name="email">
                 </div>
                 
                 <button type="submit" class="submit-button">Adicionar Funcionário</button>

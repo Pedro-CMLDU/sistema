@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
     <link rel="stylesheet" href="../css/fucionario_chaveamento.css">
     <title>Chave</title>
 </head>
@@ -19,41 +20,26 @@
     </div>
 
     <nav class="navegacao">
-        <a href="index_menu.php">Início</a>
-        <a  class="link-add" href="adicionar_chave.php">Acrescentar chaves</a>
+        <a href="index_menu.php" class="nav-link">Início</a>
+        <a  class="link-add" href="adicionar_chave.php">Adicionar Chave</a>
     </nav>
-
-    <section class="blocomeio">
-        <div class="input-pesquisa">
-            <img src="../imagem/lupa.png" alt="lupa">
-            <input type="search" name="" id="" placeholder="Pesquisa" class="pesquisa">
-        </div>
-    </section>
-
-    <section class="blocoprincipal">
-        <div class="input-chave">
-            <img src="../imagem/lupa.png" alt="lupa">
-            <button type="submit" name="" id="" class="chave"> Chave </button>
-            <img src="../imagem/interrogacao.png" alt="interrogação" class="img-interrogação">
-        </div>
-
-        <!-- Inclusão da tabela de chaves -->
-        <div id="lista-chaves">
+    <h1 class="titulo-principal"> Chaves </h1>
+    <section class="secao-tabela">
             <?php
             require_once('../src/controller/quant_chaveamento.php');
             if (count($chaves) > 0): ?>
-                <table class="tabela-chaves">
+                <table id="tabela" class="display tabela-principal">
                     <thead>
                         <tr>
-                            <th>Descrição</th>
                             <th>Número</th>
+                            <th>Descrição</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($chaves as $chave): ?>
                             <tr>
+                                <td class="num-chave"><?php echo htmlspecialchars($chave['numero']); ?></td>
                                 <td><?php echo htmlspecialchars($chave['descricao']); ?></td>
-                                <td><?php echo htmlspecialchars($chave['numero']); ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -61,8 +47,18 @@
             <?php else: ?>
                 <p class="mensagem-vazia">Nenhuma chave cadastrada.</p>
             <?php endif; ?>
-        </div>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#tabela').DataTable({
+                    language: {
+                        url: "https://cdn.datatables.net/plug-ins/1.11.3/i18n/pt_br.json"
+                    }
+                });
+            });
+        </script>
 </body>
 
 </html>

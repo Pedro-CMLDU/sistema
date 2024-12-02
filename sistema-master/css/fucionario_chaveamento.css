@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('topo.css');
-
+@import url('tabelas.css');
 body {
     
     background-color: #f0f0f0;
@@ -28,15 +29,12 @@ body {
     justify-content: flex-end;
 }
 
-.navegacao a {
+.nav-link{
     text-decoration: none;
     color: #000;
     margin-right: 5px;
 }
 
-.navegacao a:hover {
-    text-decoration: underline;
-}
 
 .blocomeio {
     text-align: center;
@@ -153,63 +151,31 @@ body {
     margin-top: 110px;
 
 }
-.nova_chave{
-    margin-top: 0;
-    margin-left: 92%;
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-  
-}
-.nova_chave a {
-    text-decoration: none;
-    color: #000;
-    margin-right: 5px;
-}
-
 .link-add {
     margin-left: 85%;
-}
-
-
-table {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Poppins';
-}
-table th, table td {
-    padding: 10px;
-    text-align: left;
-    color: #fff;
-    font-size: 1.2rem;
-    font-family:'Poppins';
-    font-weight: 500;
-}
-
-table tr, table th{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 5%;
-    width: 100%;
-    padding: 5px;
-}
-table th {
-    font-weight: 600;
-    text-transform: uppercase;
-    display: flex;
-}
-
-table td {
+    text-decoration: none;
     background-color: #3c4b80;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 8%;
+    border-radius: 5px;
     width: 25%;
+    text-align: center;
+    color: white;
+    padding: 0.8%;
+    font-weight: 600;
 }
 
 .cargo{
     justify-content: center;
+}
+
+@media screen and (max-width: 430px) {
+    .navegacao{
+        margin-top: 25%;
+    }
+    .link-add{
+        margin-left: 70%;
+    }
+    table td{
+        text-align: center;
+        font-size: 14px;
+    }
 }
