@@ -105,7 +105,7 @@ button:hover {
   }
   
 
-@media screen and (max-width:414px) {
+@media screen and (max-width:430px) {
     .form-container{
         margin-top: 13% ;
         width: 90%;

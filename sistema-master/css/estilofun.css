@@ -36,12 +36,24 @@ body {
 .header .right-logo img {
     width: 60px;
 }
-
 .breadcrumb {
+    width: 100%;
     margin-top: 5%;
-    margin-left: 2%;
     font-size: 14px;
+    display: flex;
 }
+.breadcrumb-esq{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+.breadcrumb-dir{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
 
 .main-content {
     display: flex;
@@ -139,7 +151,6 @@ body {
     color:#000;
 }
 .link-add {
-    margin-left: 80%;
     text-decoration: none;
     background-color: #3c4b80;
     border-radius: 5px;
@@ -154,7 +165,7 @@ body {
     color: black;
 }
 
-@media screen and (max-width: 414px){
+@media screen and (max-width: 430px){
     .header .logo {
         width: 100%;
     }
@@ -162,9 +173,9 @@ body {
         width: 96.5%;
     }
     .breadcrumb {
-        margin-top: 15%;
-        margin-left: 5%;
+        margin-top: 20%;
         font-size: 14px;
+        padding-left: 2%;
     }
 
     .img_senac_logo{
@@ -180,6 +191,12 @@ body {
         display: flex;
         justify-content: center;
         
+    }
+    .link-add {
+        width: 50%;
+    }
+    .breadcrumb-dir{
+        justify-content: center;
     }
     
 

@@ -293,11 +293,15 @@ body {
         margin: 0 auto;
         display: flex;
         flex-direction: column-reverse;
+        justify-content: center;
        
     }
     .botoes-sidebar{
         width: 100%;
         height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .sidebar button{
         margin-bottom: 10px;

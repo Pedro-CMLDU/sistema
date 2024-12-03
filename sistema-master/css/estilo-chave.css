@@ -168,12 +168,11 @@ a {
     text-decoration: none;
 }
 
-@media screen and (max-width:414px) {
+@media screen and (max-width:430px) {
     .form-container{
         margin-top: 5% ;
         width: 90%;
         height: 65vh;
-        
     }
     form{
         padding: 2%;
@@ -195,8 +194,9 @@ a {
         width: 100%;
     
     }
-
-    
+    .chave{
+        margin-top: 3%;
+    }
     .centralizado{
         font-size: 25px;
     }
@@ -220,8 +220,6 @@ a {
 .container {
     display:flex;
     flex-direction: column;
-  
-
 }
 .img_senac_logo{
     margin-right: 9%;

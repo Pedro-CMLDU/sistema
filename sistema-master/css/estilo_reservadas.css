@@ -15,10 +15,12 @@ body{
 }
 
 .breadcrumb {
+    width: 100%;
     margin-top: 7%;
     margin-left: 2%;
     font-size: 14px;
 }
+
 .breadcrumb a {
     text-decoration: none;
     color: #333;
@@ -52,4 +54,10 @@ body{
 }
 .chaves-disponiveis{
     width: 50%;
+}
+
+@media screen and (max-width: 430px){
+    .breadcrumb{
+        margin-top: 20%;
+    }
 }

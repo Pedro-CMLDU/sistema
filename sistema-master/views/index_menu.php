@@ -39,21 +39,10 @@
                     <div class="botoes-sidebar">
                         <a href="historico_index.php" class="botao-link">Histórico</a>
                         <a href="disponiveis_index.php" class="botao-link">Disponíveis</a>
-                        <a href="reservadas_index.php" class="botao-link">Reservadas</a>
-                        <a href="pendentes_index.php" class="botao-link">Pendentes</a>
-                        
-                    </div>
-                    <div class="settings-icon">
-                        <span>&#9881;</span>
+                        <a href="reservadas_index.php" class="botao-link">Reservadas</a>                        
                     </div>
                 </div>
             </div>
-            
-          
-
-            
-
-
         </div>
     </div>
     

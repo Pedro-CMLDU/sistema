@@ -21,9 +21,15 @@
     </header>
     
     <nav class="breadcrumb">
-        <a href="index_menu.php" class="links-nav">Início > </a>
-        <a href="fucionario.php" class="links-nav">Voltar</a>
-        <a class="link-add" href="tipo_func.php">Cadastrar cargo</a>
+        <div class="breadcrumb-esq">
+            <a href="index_menu.php" class="links-nav">Início > </a>
+            <a href="fucionario.php" class="links-nav">Voltar</a>
+        </div>
+        <div class="breadcrumb-dir">
+            <a class="link-add" href="tipo_func.php">Cadastrar cargo</a>
+        </div>
+        
+        
 
     </nav>
     

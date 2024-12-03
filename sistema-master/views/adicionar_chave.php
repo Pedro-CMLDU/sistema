@@ -29,9 +29,9 @@
             <h2>Adicionar Nova Chave</h2>
             <form action="../src/controller/add_adicionar_chaves.php" method="POST">
                 <label for="sala" class="custom-label">Sala:</label>
-                <input type="text" id="sala" name="sala" placeholder="Sala:">
+                <input type="text" id="sala" name="sala" placeholder="Nome da sala">
                 <label for="localizacao" class="custom-label">Localização(Número da sala):</label>
-                <input type="text" id="localizacao" name="localizacao" placeholder="Localização:">
+                <input type="text" id="localizacao" name="localizacao" placeholder="Localização">
                 <button type="submit" class="butao">Adicionar Chave</button>
             </form>
         </div>
