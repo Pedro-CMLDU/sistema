@@ -18,10 +18,14 @@
             <img src="../imagem/logosenac.png" alt="logosenac" class="img_senac_logo">
         </div>
     </div>
-
     <nav class="navegacao">
-        <a href="index_menu.php" class="nav-link">Início</a>
-        <a  class="link-add" href="adicionar_chave.php">Adicionar Chave</a>
+        <div class="naveg-esq">
+            <a href="index_menu.php" class="nav-link">Início</a>
+        </div>
+        <div class="naveg-dir">
+            <a  class="link-add" href="adicionar_chave.php">Adicionar Chave</a>
+            <a href="../src/controller/sair.php" class="link-sair">Sair</a>
+        </div>      
     </nav>
     <h1 class="titulo-principal"> Chaves </h1>
     <section class="secao-tabela">

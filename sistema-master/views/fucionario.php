@@ -19,14 +19,14 @@
         </div>
     </div>
     </div>
-
     <nav class="navegacao">
-        <div class="nav-esq">
-            <a href="index_menu.php" class="links-nav"> Inicio</a>
+        <div class="naveg-esq">
+            <a href="index_menu.php" class="nav-link">Início</a>
         </div>
-        <div class="nav-dir">
+        <div class="naveg-dir">
             <a href="add_fun.php" class="botao-add-func">Novo Fucionário</a>
-        </div>
+            <a href="../src/controller/sair.php" class="link-sair">Sair</a>
+        </div>      
     </nav>
     <h1 class="titulo-principal">Fucionários </h1> 
         <section class="secao-tabela">

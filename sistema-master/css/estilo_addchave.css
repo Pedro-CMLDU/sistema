@@ -96,12 +96,12 @@ button:hover {
 
 .custom-label{
     font-size: 19px; /* Ajusta o tamanho da fonte */
-     margin-top: 2%; /* Define a margem ao redor do elemento */
-  padding: 0.5px; /* Define o espaçamento interno do elemento */
-  align-items: center; /* Alinha verticalmente no centro */
-  text-align: center; /* Centraliza o texto e a imagem */
-  padding: 8px;
-  font-weight: 300; /* Adiciona espaçamento interno ao campo de entrada */
+    margin-top: 2%; /* Define a margem ao redor do elemento */
+    padding: 0.5px; /* Define o espaçamento interno do elemento */
+    align-items: center; /* Alinha verticalmente no centro */
+    text-align: center; /* Centraliza o texto e a imagem */
+    padding: 8px;
+    font-weight: 300; /* Adiciona espaçamento interno ao campo de entrada */
   }
   
 
@@ -110,7 +110,6 @@ button:hover {
         margin-top: 13% ;
         width: 90%;
         height: 65vh;
-        
     }
     form{
         padding: 2%;
@@ -151,40 +150,37 @@ button:hover {
     .logosenac img{
         width: 49px;
         height: 28px;
-        align-self: center;
-
-
-    
+        align-self: center;    
     }
     .centralizado{
             font-size: 25px;
     }
    
     /* Breadcrumb de navegação */
-.breadcrumb {
-    font-size: 14px;
-    text-align: left;
-    margin-top: 20%;
-}
+    .breadcrumb {
+        font-size: 14px;
+        text-align: left;
+        margin-top: 20%;
+    }
 
-.breadcrumb a {
-    text-decoration: none;
-    color: #333;
-}
+    .breadcrumb a {
+        text-decoration: none;
+        color: #333;
+    }
 
 
-.img_senac_logo{
-    margin-right: 9%;
-    width: 55px;
-    height: 35px;
-    margin-top: 12px;
- }
- .keybox{
-    margin: auto;
-    width: 1000%;
-    right: 80%;
-    display: flex;
-    justify-content: center;
-    
-}
+    .img_senac_logo{
+        margin-right: 9%;
+        width: 55px;
+        height: 35px;
+        margin-top: 12px;
+    }
+    .keybox{
+        margin: auto;
+        width: 1000%;
+        right: 80%;
+        display: flex;
+        justify-content: center;
+        
+    }
 }

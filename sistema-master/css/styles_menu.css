@@ -3,8 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    
+    box-sizing: border-box;    
 }
 
 body {
@@ -18,10 +17,16 @@ body {
 .container {
     width: 100%;
     margin: 0 auto;
-    padding: 70px;
-   
+    padding: 70px;   
 }
-
+.sair{
+    display: flex;
+    justify-content: end;
+}
+.link-sair{
+    text-decoration: none;
+    color: #333;
+}  
 .logo, .brand{
     width: 50%;
     display: flex;
@@ -255,6 +260,7 @@ body {
 @media screen and (max-width: 800px){
     .container{
         padding: 2px;
+
     }
     .main-content{
         display: flex;
@@ -262,7 +268,7 @@ body {
         width: 100%;
         gap: 1%;
         padding: 1%;
-        margin-top: 20%;
+        margin-top: 5%;
     }
     .section.loans {
         display: flex;
@@ -351,6 +357,14 @@ body {
         justify-content: center;
         
     }
+    .sair{
+        margin-top: 15%;
+    }
+    .link-sair{
+        text-decoration: none;
+        color: #333;
+        
+    } 
 
     
 }

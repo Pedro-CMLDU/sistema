@@ -21,6 +21,7 @@
     </div>
     <nav class="breadcrumb">
         <a href="index_menu.php">Início</a>
+        <a href="../src/controller/sair.php" class="link-sair">Sair</a>
     </nav>
 
         <h1 class="titulo-principal">Lista de Chaves Emprestadas</h1>

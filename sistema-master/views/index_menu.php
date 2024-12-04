@@ -8,17 +8,19 @@
 </head>
 <body>
     <div class="retangulo-superior">
-        <div class="keybox">
-         <img src="../imagem/logo.png" alt="keybox">
+            <div class="keybox">
+                <img src="../imagem/logo.png" alt="keybox">
+            </div>
+            <div class="imglogosenac">
+                <img src="../imagem/logosenac.png" alt="logosenac" class="img_senac_logo">
+            </div>
+     </div>
+    <div class="container"> 
+        <div class="sair">
+                 <a href="../src/controller/sair.php" class="link-sair">Sair</a>
         </div>
-        <div class="imglogosenac">
-         <img src="../imagem/logosenac.png" alt="logosenac" class="img_senac_logo">
-     </div>
-     </div>
- 
-    <div class="container">       
-
         <div class="main-content">
+   
             <div class="div-um">
                 <div class="section keys">
                     <a href="chaveamento.php" class="botao-sections">Chaves</a>

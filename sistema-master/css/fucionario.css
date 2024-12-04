@@ -58,10 +58,17 @@ body {
     display: flex;
     flex-direction: row;
 }
-
-.links-nav{
+.link-sair{
     text-decoration: none;
-    color: black;
+    color: #333;
+    align-self: center;
+} 
+
+.nav-link{
+    text-decoration: none;
+    color: #333;
+    margin-top: 3px;
+    left: 50%;
 }
 .blocomeio {
     text-align: center;
@@ -84,13 +91,27 @@ body {
     vertical-align: middle;
     
 }
-.nav-esq, .nav-dir {
-    width: 50%;
+.navegacao{
+    margin-top: 5%;
+    margin-left: 2%;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    width: 96%;
+    display: flex;
+    flex-direction: row;
 }
 
-.nav-dir {
+.naveg-esq{
+    width: 50%;
     display: flex;
-    justify-content: end;
+    flex-direction: row;
+    justify-content: start;
+}
+.naveg-dir{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2%;
 }
 
 .blocoprincipal {

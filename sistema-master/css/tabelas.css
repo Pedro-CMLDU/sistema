@@ -3,9 +3,8 @@
     color: #3c4b80;
 }
 .secao-tabela{
-    width: 96%;
+    width: 100%;
     font-family: 'Poppins';
-    padding: 2%;
 }
 .tabela-principal{
     display: flex;

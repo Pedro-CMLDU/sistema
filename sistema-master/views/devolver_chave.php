@@ -40,7 +40,7 @@
 
                     // Consulta para selecionar os registros sem data de devolução
                     $sql = "
-                        SELECT registro.id AS registro_id, func.nome AS funcionario, chave.descricao AS chave, registro.data_emp
+                        SELECT registro.id AS registro_id, func.nome AS funcionario, chave.descricao AS chave, registro.data_emp, chave.id AS chave_id
                         FROM registro
                         JOIN func ON registro.id_func = func.id
                         JOIN chave ON registro.id_chave = chave.id
@@ -57,7 +57,7 @@
                                 <td><?= $registro['chave'] ?></td>
                                 <td class="data-emp"><?= $registro['data_emp'] ?></td>
                                 <td class="botao-devolver">
-                                    <a href="../src/controller/devolvendo_chave.php?<?= $registro['registro_id'] ?>" class="devolver"> Devolver </a>
+                                    <a href="../src/controller/devolvendo_chave.php?registro_id=<?= $registro['registro_id'] ?>" class="devolver"> Devolver </a>
                                 </td>
                             </tr>
                         <?php
